@@ -5,19 +5,12 @@ title Blue Trail I/O
 header
   h1 Blue Trail I/O
 
-nav
-  ul
-    li
-      a(href='/') Chat
-
-    li
-      a(href='/me') Me
-
-    li
-      a(href='/friends') Friends
-
 section
-  block content
+  span Nick 
+  input.nick(type='text' placeholder='Enter a nickname')
+  button.update-nick Update
+
+  .messages
 
 script(src='http://code.jquery.com/jquery-2.1.0.min.js')
 script(src='/socket.io/socket.io.js')

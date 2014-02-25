@@ -47,4 +47,6 @@ var io = socketio.listen(server);
 
 io.sockets.on('connection', function (socket) {
   console.log('Socket IO server connected with client');
+
+  socket.emit('message', 'Anonymous joined the chat');
 });

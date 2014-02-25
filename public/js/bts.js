@@ -1,10 +1,27 @@
 var socket = io.connect('http://localhost');
 
 var bts = {
+  messages: [],
+  
+  addMessage: function (msg) {
+    var message = $('<div><p></p></div>');
+
+    message.find('p').text(msg);
+
+    $('.messages').append(message);
+  },
+  
   me: {
     nick: ''
   }
 };
+
+socket.on('message', function (msg) {
+  console.log(msg);
+  bts.addMessage(msg);
+});
+
+
 
 // Update nick
 
